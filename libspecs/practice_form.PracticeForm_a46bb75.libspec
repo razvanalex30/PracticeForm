@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<keywordspec name="practice_form.PracticeForm" type="LIBRARY" format="ROBOT" scope="TEST" namedargs="true" generated="2021-04-05T14:05:33Z" specversion="2" source="C:\Users\RAlexandru\Documents\Proiecte Eclipse\TestPracticeForm\practice_form.py" lineno="9">
+<version />
+<scope>test case</scope>
+<namedargs>yes</namedargs>
+<doc>Documentation for library ``practice_form.PracticeForm``.</doc>
+<kw name="Date Parse" lineno="16">
+<arguments>
+<arg>date_dict</arg>
+</arguments>
+<doc />
+</kw>
+<kw name="Fill Textboxes" lineno="77">
+<arguments>
+<arg>input_data</arg>
+</arguments>
+<doc />
+</kw>
+<kw name="Gender Selection" lineno="67">
+<arguments>
+<arg>gender</arg>
+</arguments>
+<doc />
+</kw>
+<kw name="Input Subjects" lineno="107">
+<arguments>
+<arg>selected_subjects</arg>
+</arguments>
+<doc />
+</kw>
+<kw name="Insert Dob" lineno="50">
+<arguments>
+<arg>date_of_birth</arg>
+</arguments>
+<doc />
+</kw>
+<kw name="Retrieve Checkboxes" lineno="56">
+<arguments>
+<arg>input_hobbies</arg>
+</arguments>
+<doc />
+</kw>
+<kw name="Retrieve Text Boxes" lineno="29">
+<arguments>
+</arguments>
+<doc />
+</kw>
+<kw name="Select City" lineno="96">
+<arguments>
+<arg>chosen_city</arg>
+</arguments>
+<doc />
+</kw>
+<kw name="Select State" lineno="85">
+<arguments>
+<arg>state</arg>
+</arguments>
+<doc />
+</kw>
+<kw name="Submit Close" lineno="115">
+<arguments>
+</arguments>
+<doc />
+</kw>
+<kw name="Textbox Parse" lineno="24">
+<arguments>
+<arg>textbox</arg>
+<arg>input_string</arg>
+</arguments>
+<doc />
+</kw>
+</keywordspec>
