@@ -4,7 +4,6 @@
     <relativeTo>WORKSPACE</relativeTo>
     <referencedLibrary type="PYTHON" name="SeleniumLibrary" path="C:/Users/RAlexandru/AppData/Local/Programs/Python/Python39/Lib/site-packages/SeleniumLibrary/__init__.py" dynamic="false"/>
     <referencedLibrary type="PYTHON" name="practice_form.PracticeForm" path="TestPracticeForm/practice_form.py" dynamic="false"/>
-    <referencedLibrary type="PYTHON" name="driver_creation.SeleniumLibraryExt" path="TestPracticeForm/driver_creation.py" dynamic="false"/>
     <pythonpath/>
     <classpath/>
     <excludedForValidation/>

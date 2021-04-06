@@ -1,17 +1,18 @@
 from datetime import datetime
-
+from robot.libraries.BuiltIn import BuiltIn
 from selenium import webdriver
 from driver_creation import SeleniumLibraryExt
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.keys import Keys
 import time
 
-class PracticeForm:
+class PracticeForm(SeleniumLibraryExt):
+    
 
     def __init__(self):
         self.dict = None
-
-    
+        self.driver = None
+        
     @staticmethod
     def date_parse(date_dict):
         month = datetime.strptime(date_dict["Month"], "%B")
@@ -27,7 +28,7 @@ class PracticeForm:
         textbox.send_keys(Keys.RETURN)
 
     def retrieve_text_boxes(self):
-        self.driver = SeleniumLibraryExt.create_driver()
+        self.driver = self.driver1()
         label_dict = dict()
         xpaths = list()
         form_1 = self.driver.find_elements_by_xpath("//input[@type='text'][contains(@class,'-2 form-control')]")
@@ -48,13 +49,13 @@ class PracticeForm:
         print(label_dict)
 
     def insert_dob(self, date_of_birth):
-        self.driver = SeleniumLibraryExt.create_driver()
+        # self.driver = self.driver1()
         textbox_dob = self.driver.find_element_by_xpath("//input[@type='text'][@id='dateOfBirthInput']")
         date = self.date_parse(date_of_birth)
         self.textbox_parse(textbox_dob, date)
 
     def retrieve_checkboxes(self, input_hobbies):
-        self.driver = SeleniumLibraryExt.create_driver()
+        # self.driver = self.driver1()
         checkboxes = self.driver.find_elements_by_xpath("//div[@class='custom-control custom-checkbox "
                                                         "custom-control-inline']//label")
         all_hobbies = list()
@@ -65,7 +66,7 @@ class PracticeForm:
                 self.driver.find_element_by_xpath(f"//label[contains(text(),'{elem}')]").click()
 
     def gender_selection(self, gender):
-        self.driver = SeleniumLibraryExt.create_driver()
+        # self.driver = self.driver1()
         radio_buttons = self.driver.find_elements_by_xpath("//div[@class='custom-control custom-radio "
                                                            "custom-control-inline']")
         all_genders = list()
@@ -75,7 +76,7 @@ class PracticeForm:
             self.driver.find_element_by_xpath(f"//label[contains(text(),'{gender}')]").click()
 
     def fill_textboxes(self, input_data):
-        self.driver = SeleniumLibraryExt.create_driver()
+        # self.driver = self.driver1()
         for key in input_data:
             if key in self.dict:
                 text_box = self.driver.find_element_by_xpath(self.dict[key])
@@ -83,7 +84,7 @@ class PracticeForm:
                 text_box.send_keys(input_data[key])
 
     def select_state(self, state):
-        self.driver = SeleniumLibraryExt.create_driver()
+        # self.driver = self.driver1()
         states = list()
         self.driver.find_element_by_xpath("//div[@id='state']//div[@class=' css-1hwfws3']").click()
         states_objects = self.driver.find_elements_by_xpath("//div[contains(@id,'react-select')]")
@@ -94,7 +95,7 @@ class PracticeForm:
                 f"//div[contains(@id,'react-select')][contains(text(),'{state}')]").click()
 
     def select_city(self, chosen_city):
-        self.driver = SeleniumLibraryExt.create_driver()
+        # self.driver = self.driver1()
         cities = list()
         self.driver.find_element_by_xpath("//div[contains(text(),'Select City')]").click()
         cities_objects = self.driver.find_elements_by_xpath("//div[contains(@id,'react-select-')]")
@@ -105,7 +106,7 @@ class PracticeForm:
                 f"//div[contains(@id,'react-select')][contains(text(),'{chosen_city}')]").click()
 
     def input_subjects(self, selected_subjects):
-        self.driver = SeleniumLibraryExt.create_driver()
+        # self.driver = self.driver1()
         self.driver.find_element_by_xpath("//div[contains(@class,'subjects-auto-complete__input')]").click()
         textbox = self.driver.find_element_by_xpath("//*[@id='subjectsInput']")
         for elem in selected_subjects:
@@ -113,7 +114,7 @@ class PracticeForm:
             textbox.send_keys(Keys.RETURN)
 
     def submit_close(self):
-        self.driver = SeleniumLibraryExt.create_driver()
+        # self.driver = self.driver1()
         self.driver.find_element_by_xpath("//button[@id='submit']").click()
         time.sleep(5)
         self.driver.find_element_by_xpath("//button[@id='closeLargeModal']").click()
